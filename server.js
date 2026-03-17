@@ -1,16 +1,16 @@
 const express = require('express');
 const path = require('path');
-const app = express(); // <-- ¡Esta es la línea que te falta!
+const app = express();
 
-// Render nos da el puerto en process.env.PORT
+// Puerto dinámico para Render o 3000 para local
 const PORT = process.env.PORT || 3000;
 
-// Servir archivos estáticos desde la carpeta 'public'
-app.use(express.static(path.join(__dirname, 'public')));
+// Servir archivos estáticos (CSS, JS, Imágenes)
+app.use(express.static(path.resolve(__dirname, 'public')));
 
-// Ruta principal para cargar el index.html
+// Ruta principal: Entrega el archivo index.html
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 
 app.listen(PORT, () => {
