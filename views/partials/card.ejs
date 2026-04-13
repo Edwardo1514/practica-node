@@ -1,0 +1,22 @@
+<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="service-item bg-white h-100 p-4">
+        <div class="d-flex ms-n4 mb-4">
+            <div class="service-icon flex-shrink-0 bg-light me-4">
+                <img class="img-fluid" src="img/<%= servicio.icono %>" alt="<%= servicio.nombre %>">
+            </div>
+            <div class="service-text">
+                <h3><%= servicio.nombre %></h3>
+                <a class="btn btn-sm btn-outline-primary px-3 mt-auto" href="">Read More <i class="fa fa-arrow-right ms-1"></i></a>
+            </div>
+        </div>
+        <div class="overflow-hidden">
+            <img class="img-fluid service-img w-100" src="img/<%= servicio.imagen %>" alt="<%= servicio.nombre %>">
+        </div>
+    </div>
+</div>
+            
+<div class="row g-4 justify-content-center">
+    <% servicios.forEach(item => { %>
+        <%- include('partials/card', { servicio: item }) %>
+    <% }) %>
+</div>
