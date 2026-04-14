@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+
+<%- include('partials/hero') %> 
+
+<div class="container-xxl py-5">
+    </div>
+
+<div class="container-fluid bg-light py-5 mt-5">
+    <div class="container py-5">
+        <div class="row g-4 justify-content-center">
+            <% servicios.forEach(item => { %>
+                <%- include('partials/card', { servicio: item }) %>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
